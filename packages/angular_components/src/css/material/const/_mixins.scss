@@ -13,17 +13,35 @@
 
 // #############################################################################
 //
-// WARNING: DO NOT IMPORT DIRECTLY OUTSIDE OF LIB/SRC/CSS/MATERIAL
+// WARNING: DO NOT IMPORT DIRECTLY OUTSIDE OF
+// LIB/SRC/CSS/MATERIAL
 //
 // #############################################################################
 
 // Useful and reusable pieces of common css.
 
+// Forces an element to take up the same space as its closest, positioned
+// ancestor or, if none exists, the root element.
+@mixin fit {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 // clearfix forces the containing element to contain and be the same height as
 // the floated child elements.
 @mixin clearfix() {
-  &:before, &:after { content: ' '; display: table; }
-  &:after { clear: both; }
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
 }
 
 @mixin box-sizing($type:border-box) {
@@ -53,7 +71,7 @@
   width: $button-size;
 
   // Icon is in after pseudo element to isolate opacity fiddling.
-  &:after {
+  &::after {
     @include icon-background($icon-url, $button-size, $icon-size);
     content: '';
     display: block;
@@ -61,33 +79,33 @@
     left: 0;
     position: absolute;
     top: 0;
-    transition: opacity $mat-transition-fast-slow $mat-transition;
+    transition: opacity $mat-transition-standard $mat-transition;
   }
 
   // Light theme - default
-  &:focus:after,
-  &:hover:after,
-  &:active:after {
+  &:focus::after,
+  &:hover::after,
+  &:active::after {
     opacity: $mat-icon-opacity-hover;
   }
 
-  &:disabled:after {
+  &:disabled::after {
     opacity: $mat-icon-opacity-disabled;
   }
 
   // Dark theme
-  &.dark:after {
+  &.dark::after {
     opacity: $mat-icon-dark-opacity;
   }
 
-  &.dark:focus:after,
-  &.dark:hover:after,
-  &.dark:active:after {
+  &.dark:focus::after,
+  &.dark:hover::after,
+  &.dark:active::after {
     opacity: $mat-icon-dark-opacity-hover;
     outline: none;
   }
 
-  &.dark:disabled:after {
+  &.dark:disabled::after {
     opacity: $mat-icon-dark-opacity-disabled;
   }
 }
@@ -101,7 +119,7 @@
   opacity: $mat-icon-opacity;
   outline: none;
   padding: 0;
-  transition: opacity $mat-transition-fast-slow $mat-transition;
+  transition: opacity $mat-transition-standard $mat-transition;
   width: $button-size;
 
   @if $circle {
@@ -168,7 +186,7 @@
 // given selector, anywhere on the page.
 // $thumb-hover-color should be a Material color matching your app's theme.
 @mixin material-scrollbars($selector, $thumb-hover-color) {
-  /deep/ #{$selector} ::-webkit-scrollbar {
+  ::ng-deep #{$selector} ::-webkit-scrollbar {
     background-color: $mat-scrollbar-background;
 
     // Height only applies to horizontal scrollbars
@@ -178,7 +196,7 @@
     width: $mat-grid-type;
   }
 
-  /deep/ #{$selector} ::-webkit-scrollbar:hover {
+  ::ng-deep #{$selector} ::-webkit-scrollbar:hover {
     background-color: $mat-scrollbar-background-hover;
 
     // Spec wants scrollbars to enlarge on hover, but Chrome doesn't recompute
@@ -187,7 +205,7 @@
     //width: $mat-grid;
   }
 
-  /deep/ #{$selector} ::-webkit-scrollbar-thumb {
+  ::ng-deep #{$selector} ::-webkit-scrollbar-thumb {
     background-color: $mat-scrollbar-thumb;
 
     // min-height only applies to vertical scrollbar thumbs
@@ -197,11 +215,11 @@
     min-width: 6 * $mat-grid;
   }
 
-  /deep/ #{$selector} ::-webkit-scrollbar-thumb:hover {
+  ::ng-deep #{$selector} ::-webkit-scrollbar-thumb:hover {
     background-color: $thumb-hover-color;
   }
 
-  /deep/ #{$selector} ::-webkit-scrollbar-button {
+  ::ng-deep #{$selector} ::-webkit-scrollbar-button {
     width: 0;
     height: 0;
   }

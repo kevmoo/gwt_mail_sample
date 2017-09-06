@@ -12,23 +12,24 @@
  */
 
 @import 'lib/src/css/material/material';
-@import 'lib/src/css/shared/compass_polyfills';
-@import 'compass/css3/flexbox';
 
 $icon-size: $mat-grid * 3;
+$error-color: $mat-red-700;
+$error-text-color: #d34336;
 
 :host {
-  @include display-flex(inline-flex);
-  @include flex(1);
+  display: inline-flex;
+  flex: 1;
+  flex-direction: column;
   min-height: $icon-size;
   overflow: hidden;
 }
 
 .button {
-  @include display-flex;
-  @include align-items(center);
-  @include justify-content(space-between);
-  @include flex(1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
   line-height: initial;
   overflow: hidden;
 
@@ -42,6 +43,10 @@ $icon-size: $mat-grid * 3;
     &.is-disabled {
       border-bottom-style: dotted;
     }
+
+    &.invalid {
+      border-bottom-color: $error-color;
+    }
   }
 
   &.is-disabled {
@@ -49,11 +54,16 @@ $icon-size: $mat-grid * 3;
   }
 
   .button-text {
-    @include flex(1);
+    flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
+
+.error-text {
+  color: $error-text-color;
+  font-size: $mat-caption-font-size;
 }
 
 // OK, so here's the thing. The dropdown arrow icon is actually pretty small,
@@ -71,7 +81,7 @@ $icon-size: $mat-grid * 3;
   $hacked-height: $icon-size / 2;
   height: $hacked-height;
 
-  /deep/ i.material-icons-extended {
+  ::ng-deep i.material-icons-extended {
     // Finally let's adjust the position of the glyph itself to compensate for
     // the smaller size of the glyph element. (This assumes center alignment)
     position: relative;

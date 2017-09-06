@@ -11,12 +11,11 @@
  * to include CSS generation from SASS files during the build process.
  */
 
-@import 'compass/css3/flexbox';
 @import 'lib/src/components/material_shadow/css/shadow';
 @import 'lib/src/css/material/material';
 
 :host {
-  @include display-flex;
+  display: flex;
 }
 
 :host:focus {
@@ -29,6 +28,6 @@
 }
 
 .tab-content {
-  @include display-flex();
-  @include flex(0 0 100%);
+  display: flex;
+  flex: 0 0 100%;
 }

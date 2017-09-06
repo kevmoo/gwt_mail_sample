@@ -12,21 +12,19 @@
  */
 
 @import 'lib/src/css/material/material';
-@import 'compass/css3/flexbox';
 @import 'lib/src/components/glyph/mixins';
 @import 'lib/src/components/material_list/mixins';
 
 $icon-size: $mat-grid * 3;
 
 :host {
-  @include display-flex(inline-flex);
+  display: inline-flex;
 }
 
 .button {
-  @include display-flex;
-  @include align-items(center);
-  @include flex-grow(1);
-
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
   cursor: pointer;
 
   // The icon is absolutely-positioned so that it doesn't factor into layout, so
@@ -62,4 +60,8 @@ $icon-size: $mat-grid * 3;
   // time. We have to bump it up an extra pixel to account for the 1px of
   // padding-bottom on the button div.
   top: calc(50% - #{$icon-size / 2 + 1px});
+}
+
+.search-box {
+  width: 100%;
 }

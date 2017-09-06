@@ -12,7 +12,6 @@
  */
 
 @import 'lib/src/css/material/material';
-@import 'compass/css3/flexbox';
 
 /// Mixins for Material ExpansionPanel. These mixins should be applied with
 /// standard Sass scoping logic, such as:
@@ -62,7 +61,7 @@ $_panel: 'div.panel.themeable';
 }
 
 @mixin expansionpanel-focused-background-color($color) {
-  /deep/ #{$_panel} header.closed {
+  ::ng-deep #{$_panel} > header.closed {
     &:hover,
     &:focus {
       background-color: $color;
@@ -71,7 +70,7 @@ $_panel: 'div.panel.themeable';
 }
 
 @mixin expansionpanel-focused-text-color($color) {
-  /deep/ #{$_panel} header.closed {
+  ::ng-deep #{$_panel} > header.closed {
     &:hover,
     &:focus {
       color: $color;
@@ -80,68 +79,74 @@ $_panel: 'div.panel.themeable';
 }
 
 @mixin expansionpanel-background-color($color) {
-  /deep/ #{$_panel} {
+  ::ng-deep #{$_panel} {
     background-color: $color;
   }
 }
 
 @mixin expansionpanel-text-color($color) {
-  /deep/ #{$_panel} {
+  ::ng-deep #{$_panel} {
     color: $color;
   }
 }
 
 @mixin expansionpanel-header-text-color($color) {
-  /deep/ #{$_panel} header {
+  ::ng-deep #{$_panel} > header {
     color: $color;
   }
 }
 
 @mixin expansionpanel-secondary-text-color($color) {
-  /deep/ #{$_panel} header p.secondary-text {
+  ::ng-deep #{$_panel} > header p.secondary-text {
     color: $color;
   }
 }
 
+@mixin expansionpanel-panel-name-max-width($max-width) {
+  ::ng-deep > #{$_panel} > header > .panel-name {
+    max-width: $max-width;
+  }
+}
+
 @mixin expansionpanel-expand-button-text-color($color) {
-  /deep/ #{$_panel} glyph.expand-button {
+  ::ng-deep #{$_panel} glyph.expand-button {
     color: $color;
   }
 }
 
 @mixin expansionpanel-left-align-action-buttons() {
-  /deep/ material-yes-no-buttons {
-    @include flex-direction(row);
+  ::ng-deep material-yes-no-buttons {
+    flex-direction: row;
   }
 }
 
 @mixin expansionpanel-open-border-width($border-width) {
-  /deep/ .panel.open {
+  ::ng-deep .panel.open {
     border-width: $border-width;
   }
 }
 
 @mixin expansionpanel-border-width($border-width) {
-  /deep/ .panel {
+  ::ng-deep .panel {
     border-width: $border-width;
   }
 }
 
 @mixin expansionpanel-no-content-margin() {
-  /deep/ .panel .content-wrapper {
+  ::ng-deep .panel .content-wrapper {
     margin: 0;
   }
 }
 
 @mixin expansionpanel-header-padding($padding) {
-  /deep/ #{$_panel} header {
+  ::ng-deep #{$_panel} > header {
     padding: $padding;
   }
 }
 
 // Disables the header expansion effect when the panel is opened.
 @mixin expansionpanel-no-expansion() {
-  /deep/ #{$_panel} {
+  ::ng-deep #{$_panel} {
     transition: none;
 
     &.open > header {
@@ -155,7 +160,30 @@ $_panel: 'div.panel.themeable';
 // a border that is applied. This prevents the header text from
 // suddenly jumping due to the extra border.
 @mixin expansionpanel-open-panel-offset($offset-px) {
-  /deep/ #{$_panel}.open {
+  ::ng-deep #{$_panel}.open {
     margin-top: -$offset-px;
+  }
+}
+
+@mixin expansionpanel-dense-theme() {
+  ::ng-deep #{$_panel} {
+
+    header,
+    &.open > header {
+      min-height: $mat-grid * 4;
+    }
+
+    .action-buttons {
+      padding: $mat-grid 0;
+    }
+
+    .panel-name {
+      margin: $mat-grid 0;
+      line-height: $mat-grid * 2;
+    }
+
+    .content-wrapper {
+      margin: 0 $mat-grid * 3 $mat-grid;
+    }
   }
 }

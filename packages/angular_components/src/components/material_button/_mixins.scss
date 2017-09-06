@@ -11,12 +11,13 @@
  * to include CSS generation from SASS files during the build process.
  */
 
-@import 'lib/src/css/material/material',
-'compass/css3',
-'lib/src/components/glyph/mixins',
-'lib/src/components/theme/mixins';
-
 @import 'lib/src/components/material_shadow/css/shadow';
+@import 'lib/src/css/material/material';
+// TODO(google): Remove once glyph has been replaced with material-icon.
+@import 'lib/src/components/glyph/mixins';
+@import 'lib/src/components/material_icon/mixins';
+@import 'lib/src/components/theme/mixins';
+
 $fab-size: $mat-grid * 7;
 $fab-mini-size: $mat-grid * 5;
 $fab-icon-size: $mat-grid * 3;
@@ -32,24 +33,37 @@ $button-hovered-background: rgba(158, 158, 158, .20);
 
 $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
 
-// These styles are based on the 1.0 paper-button styles in
-// https://github.com/PolymerElements/paper-button/blob/master/paper-button.html
+// Private used for external mixin, and button-base only.
+@mixin _button-raised {
+  @include material-shadow;
 
-// TODO(google): Conform to lint, use shared styles/material colors.
+  @include acx-theme-dark {
+    background-color: $mat-blue;
+  }
+
+  &[disabled] {
+    background: $button-disabled-background;
+    @include shadow-none;
+
+    @include acx-theme-dark {
+      background: $mat-blue;
+    }
+  }
+}
+
+@mixin button-dense {
+  height: $mat-grid * 4;
+  font-size: $mat-body-font-size;
+}
 
 @mixin button-base {
   @include acx-theme-dark {
     color: $mat-white;
-
-    &[raised] {
-      background-color: $mat-blue;
-    }
   }
 
   @include mat-type-button;
-  @include material-shadow;
-  @include user-select(none);
 
+  user-select: none;
   background: transparent;
   border-radius: inherit;
   box-sizing: border-box;
@@ -66,8 +80,7 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
   }
 
   &[dense] {
-    height: $mat-grid * 4;
-    font-size: $mat-body-font-size;
+    @include button-dense;
   }
 
   &[disabled] {
@@ -81,16 +94,10 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
     >* {
       pointer-events: none;
     }
-
-    &[raised] {
-      background: $button-disabled-background;
-
-      @include acx-theme-dark {
-        background: $mat-blue;
-      }
-    }
   }
 
+  // We specify raised here specifically instead of the mixin to satisfy the
+  // case where a mixin is not used to specify the background color.
   &:not([raised]):not([disabled]):not([icon]):hover {
     background-color: $button-hovered-background;
   }
@@ -109,9 +116,8 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
     pointer-events: none;
   }
 
-  &:not([raised]),
-  &[disabled][raised] {
-    @include shadow-none;
+  &[raised] {
+    @include _button-raised;
   }
 
   &[no-ink] material-ripple {
@@ -123,8 +129,8 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
   }
 
   .content {
-    @include display-flex(inline-flex);
-    @include align-items(center);
+    display: inline-flex;
+    align-items: center;
   }
 }
 
@@ -158,7 +164,7 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
   border-radius: $size / 2;
 
   .content {
-    @include justify-content(center);
+    justify-content: center;
     height: $size;
     width: $size;
   }
@@ -176,12 +182,17 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
 @mixin fab-custom-size($size, $icon-size: $fab-icon-size) {
   border-radius: $size / 2;
 
-  /deep/ {
+  ::ng-deep {
     .content {
       height: $size;
       width: $size;
     }
 
+    material-icon {
+      @include material-icon-size($icon-size);
+    }
+
+    // TODO(google): Remove once glyph has been replaced with material-icon.
     glyph {
       @include glyph-size($icon-size);
     }
@@ -194,44 +205,46 @@ $button-disabled-color-dark: rgba(255, 255, 255, $mat-dark-opacity-lightest);
 // The color given is not applied to disabled button, as it could otherwise look
 // as an enabled button.
 @mixin button-color($selector, $color, $hover-color: $color) {
-  /deep/ #{$selector} {
-    &:not([disabled]) {
-      > .content {
-        color: $color;
-      }
+  ::ng-deep #{$selector}:not([disabled]) {
+    > .content {
+      color: $color;
+    }
 
-      &:hover > .content {
-        color: $hover-color;
-      }
+    &:hover > .content {
+      color: $hover-color;
     }
   }
 }
 
 @mixin button-background-color($selector, $background-color) {
-  /deep/ #{$selector} {
-    &:not([disabled]) {
-      background-color: $background-color;
-    }
+  ::ng-deep #{$selector}:not([disabled]) {
+    background-color: $background-color;
+  }
+
+  ::ng-deep #{$selector}:not([disabled]):hover {
+    background-color: $background-color;
   }
 }
 
 /// Applies letter-spacing to the text of <material-button>.
 @mixin button-letter-spacing($selector, $letter-spacing) {
-  /deep/ #{$selector} div {
+  ::ng-deep #{$selector} div {
     letter-spacing: $letter-spacing;
   }
 }
 
 @mixin icon-button-color($selector, $color, $hover-color: $color) {
-  /deep/ #{$selector} {
-    &:not([disabled]) {
-      > .content > glyph {
-        color: $color;
-      }
+  ::ng-deep #{$selector}:not([disabled]) {
+    > .content > material-icon,
+    // TODO(google): Remove once glyph has been replaced with material-icon.
+    > .content > glyph {
+      color: $color;
+    }
 
-      &:hover > .content > glyph {
-        color: $hover-color;
-      }
+    &:hover > .content > material-icon,
+    // TODO(google): Remove once glyph has been replaced with material-icon.
+    &:hover > .content > glyph {
+      color: $hover-color;
     }
   }
 }
