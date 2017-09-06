@@ -1,0 +1,82 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/components/material_button/material_button.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/components/material_dialog/material_dialog.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/laminate/components/modal/modal.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "AboutDialog",
+        "7": [
+          {
+            "2": "MaterialButtonComponent"
+          },
+          {
+            "2": "MaterialDialogComponent"
+          },
+          {
+            "2": "ModalComponent"
+          }
+        ]
+      }
+    ],
+    "6": "about_dialog.dart"
+  },
+  "type": {
+    "AboutDialog": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "about-dialog",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "AboutDialog",
+        "moduleUrl": "asset:gwt_mail_sample/lib/nav/about/about_dialog.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "changeDetection": 6,
+      "inputs": {
+        "visible": "visible"
+      },
+      "inputTypes": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<modal *ngIf=\"visible\" [(visible)]=\"visible\">\n  <material-dialog class=\"headered-dialog\"\n                   [autoDismissable]=\"visible\"\n                   (dismiss)=\"visible = false\">\n    <div header>\n      <h3>About the Mail Sample</h3>\n    </div>\n    <img src=\"packages/gwt_mail_sample/nav/top/dart-logo-60.png\" class=\"logo\"/>\n    <p>\n      This sample application demonstrates the construction of a complex user\n      interface using Angular and Google's material components. <br/>\n      Have a look at the code to see how easy it is to build your own apps!\n    </p>\n    <div footer>\n      <material-button autoFocus\n                       clear-size\n                       (trigger)=\"visible = false\"\n                       class=\"white\">\n        Close\n      </material-button>\n    </div>\n  </material-dialog>\n</modal>\n",
+        "templateUrl": "asset:gwt_mail_sample/lib/nav/about/about_dialog.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:gwt_mail_sample/lib/nav/about/about_dialog.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

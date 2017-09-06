@@ -1,0 +1,104 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:math",
+        "2": [
+          "min"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/components/material_button/material_button.dart",
+        "5": false
+      },
+      {
+        "1": "package:gwt_mail_sample/mail/mail_service.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MailNavBar",
+        "5": [
+          {
+            "1": "MailService",
+            "4": "mailService"
+          }
+        ],
+        "7": [
+          {
+            "2": "MaterialButtonComponent"
+          }
+        ]
+      }
+    ],
+    "6": "mail_nav_bar.dart"
+  },
+  "type": {
+    "MailNavBar": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "mail-nav-bar",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "MailNavBar",
+        "moduleUrl": "asset:gwt_mail_sample/lib/mail/list/mail_nav_bar.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "MailService",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          }
+        ]
+      },
+      "changeDetection": 6,
+      "inputs": {},
+      "inputTypes": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<material-button dense [disabled]=\"!hasNewer\" (click)=\"newer()\">&lt; newer</material-button>\n{{start}}-{{end}} of {{total}}\n<material-button dense [disabled]=\"!hasOlder\" (click)=\"older()\">older &gt;</material-button>\n",
+        "templateUrl": "asset:gwt_mail_sample/lib/mail/list/mail_nav_bar.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:gwt_mail_sample/lib/mail/list/mail_nav_bar.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

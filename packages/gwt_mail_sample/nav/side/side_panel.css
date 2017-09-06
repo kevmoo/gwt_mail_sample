@@ -1,0 +1,17 @@
+:host-context header {
+  background-color: #eee;
+}
+
+.content {
+  margin: 8px 0px;
+  overflow: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header glyph {
+  margin-right: 6px;
+}

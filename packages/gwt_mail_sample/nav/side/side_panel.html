@@ -1,0 +1,40 @@
+<material-expansionpanel
+    flat
+    [showSaveCancel]="false"
+    [expanded]="selectedPanel == 'mailboxes'"
+    (open)="open('mailboxes')">
+  <div name class="header">
+    <div><glyph icon="mail_outline"></glyph></div>
+    <div>Mailboxes</div>
+  </div>
+  <div class="content" [style.height.px]="heightPx">
+    <mail-folder></mail-folder>
+  </div>
+</material-expansionpanel>
+<material-expansionpanel
+    flat
+    [showSaveCancel]="false"
+    [expanded]="selectedPanel == 'tasks'"
+    (open)="open('tasks')">
+  <div name class="header">
+    <div><glyph icon="view_list"></glyph></div>
+    <div>Tasks</div>
+  </div>
+  <div class="content" [style.height.px]="heightPx">
+    <task-list></task-list>
+  </div>
+</material-expansionpanel>
+<material-expansionpanel
+    flat
+    [showSaveCancel]="false"
+    [expanded]="selectedPanel == 'contacts'"
+    (open)="open('contacts')">
+  <div name class="header">
+    <div><glyph icon="contact_mail"></glyph></div>
+    <div>Contacts</div>
+  </div>
+  <div class="content" [style.height.px]="heightPx">
+    <contact-list></contact-list>
+  </div>
+</material-expansionpanel>
+<div #bottom></div>

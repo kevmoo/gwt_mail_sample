@@ -1,0 +1,20 @@
+{
+  "ngDeps": null,
+  "type": {
+    "MailItem": {
+      "class": "Identifier",
+      "name": "MailItem",
+      "moduleUrl": "asset:gwt_mail_sample/lib/mail/mail_service.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MailService": {
+      "class": "Identifier",
+      "name": "MailService",
+      "moduleUrl": "asset:gwt_mail_sample/lib/mail/mail_service.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

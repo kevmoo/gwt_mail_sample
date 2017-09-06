@@ -1,0 +1,191 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:math",
+        "2": [
+          "max"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/components/glyph/glyph.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/components/material_expansionpanel/material_expansionpanel.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/utils/browser/dom_service/dom_service.dart",
+        "5": false
+      },
+      {
+        "1": "package:gwt_mail_sample/contact/contact_list.dart",
+        "5": false
+      },
+      {
+        "1": "package:gwt_mail_sample/mail/folder/mail_folder.dart",
+        "5": false
+      },
+      {
+        "1": "package:gwt_mail_sample/task/task_list.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "SidePanel",
+        "5": [
+          {
+            "1": "DomService",
+            "4": "domService"
+          }
+        ],
+        "6": [
+          "AfterContentInit",
+          "OnDestroy"
+        ],
+        "7": [
+          {
+            "2": "ContactList"
+          },
+          {
+            "2": "GlyphComponent"
+          },
+          {
+            "2": "MailFolder"
+          },
+          {
+            "2": "MaterialExpansionPanel"
+          },
+          {
+            "2": "TaskList"
+          }
+        ]
+      }
+    ],
+    "6": "side_panel.dart",
+    "7": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular_components/src/components/glyph/glyph.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular_components/src/components/material_expansionpanel/material_expansionpanel.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular_components/src/utils/browser/dom_service/dom_service.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:gwt_mail_sample/contact/contact_list.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:gwt_mail_sample/mail/folder/mail_folder.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:gwt_mail_sample/task/task_list.template.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "type": {
+    "SidePanel": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "side-panel",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "SidePanel",
+        "moduleUrl": "asset:gwt_mail_sample/lib/nav/side/side_panel.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "DomService",
+                "moduleUrl": "asset:angular_components/lib/src/utils/browser/dom_service/dom_service.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          }
+        ]
+      },
+      "changeDetection": 6,
+      "inputs": {},
+      "inputTypes": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        4,
+        1
+      ],
+      "template": {
+        "encapsulation": 0,
+        "template": "<material-expansionpanel\n    flat\n    [showSaveCancel]=\"false\"\n    [expanded]=\"selectedPanel == 'mailboxes'\"\n    (open)=\"open('mailboxes')\">\n  <div name class=\"header\">\n    <div><glyph icon=\"mail_outline\"></glyph></div>\n    <div>Mailboxes</div>\n  </div>\n  <div class=\"content\" [style.height.px]=\"heightPx\">\n    <mail-folder></mail-folder>\n  </div>\n</material-expansionpanel>\n<material-expansionpanel\n    flat\n    [showSaveCancel]=\"false\"\n    [expanded]=\"selectedPanel == 'tasks'\"\n    (open)=\"open('tasks')\">\n  <div name class=\"header\">\n    <div><glyph icon=\"view_list\"></glyph></div>\n    <div>Tasks</div>\n  </div>\n  <div class=\"content\" [style.height.px]=\"heightPx\">\n    <task-list></task-list>\n  </div>\n</material-expansionpanel>\n<material-expansionpanel\n    flat\n    [showSaveCancel]=\"false\"\n    [expanded]=\"selectedPanel == 'contacts'\"\n    (open)=\"open('contacts')\">\n  <div name class=\"header\">\n    <div><glyph icon=\"contact_mail\"></glyph></div>\n    <div>Contacts</div>\n  </div>\n  <div class=\"content\" [style.height.px]=\"heightPx\">\n    <contact-list></contact-list>\n  </div>\n</material-expansionpanel>\n<div #bottom></div>\n",
+        "templateUrl": "asset:gwt_mail_sample/lib/nav/side/side_panel.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:gwt_mail_sample/lib/nav/side/side_panel.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": [
+        {
+          "selectors": [
+            {
+              "value": "bottom",
+              "identifier": null,
+              "identifierIsInstance": false
+            }
+          ],
+          "descendants": true,
+          "first": true,
+          "propertyName": "bottomRef",
+          "read": null
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

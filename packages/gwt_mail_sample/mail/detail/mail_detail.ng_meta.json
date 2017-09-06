@@ -1,0 +1,166 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:math",
+        "2": [
+          "max"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_components/src/utils/browser/dom_service/dom_service.dart",
+        "5": false
+      },
+      {
+        "1": "package:gwt_mail_sample/mail/mail_service.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MailDetail",
+        "5": [
+          {
+            "1": "DomService",
+            "4": "domService"
+          },
+          {
+            "1": "MailService",
+            "4": "mailService"
+          }
+        ],
+        "6": [
+          "AfterContentInit",
+          "OnDestroy"
+        ]
+      }
+    ],
+    "6": "mail_detail.dart",
+    "7": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular_components/src/utils/browser/dom_service/dom_service.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:gwt_mail_sample/mail/mail_service.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "MailDetail": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "mail-detail",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "MailDetail",
+        "moduleUrl": "asset:gwt_mail_sample/lib/mail/detail/mail_detail.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "DomService",
+                "moduleUrl": "asset:angular_components/lib/src/utils/browser/dom_service/dom_service.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          },
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "MailService",
+                "moduleUrl": "asset:gwt_mail_sample/lib/mail/mail_service.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          }
+        ]
+      },
+      "changeDetection": 6,
+      "inputs": {},
+      "inputTypes": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        4,
+        1
+      ],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div class=\"detail\" #bottom>\n  <div class=\"header\">\n    <div class=\"headerItem\">{{subject}}</div>\n    <div class=\"headerItem\"><b>From: </b>{{sender}}</div>\n    <div class=\"headerItem\"><b>To: </b>{{recipient}}</div>\n  </div>\n  <div class=\"body\" [innerHTML]=\"body\" [style.height.px]=\"heightPx\"></div>\n</div>\n",
+        "templateUrl": "asset:gwt_mail_sample/lib/mail/detail/mail_detail.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:gwt_mail_sample/lib/mail/detail/mail_detail.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": [
+        {
+          "selectors": [
+            {
+              "value": "bottom",
+              "identifier": null,
+              "identifierIsInstance": false
+            }
+          ],
+          "descendants": true,
+          "first": true,
+          "propertyName": "bottomRef",
+          "read": null
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

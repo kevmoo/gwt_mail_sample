@@ -1,0 +1,102 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:gwt_mail_sample/nav/about/about_dialog.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "TopPanel",
+        "7": [
+          {
+            "2": "AboutDialog"
+          }
+        ]
+      }
+    ],
+    "6": "top_panel.dart",
+    "7": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:gwt_mail_sample/nav/about/about_dialog.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "TopPanel": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "top-panel",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "TopPanel",
+        "moduleUrl": "asset:gwt_mail_sample/lib/nav/top/top_panel.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "changeDetection": 6,
+      "inputs": {},
+      "inputTypes": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div class=\"wrapper\">\n  <div class=\"app\">\n    <img src=\"packages/gwt_mail_sample/nav/top/dart-logo-60.png\" class=\"logo\"/>\n    <h1>AngularDart Mail Sample App</h1>\n  </div>\n\n  <div class=\"statusDiv\">\n    <div>\n      <b>Welcome back, foo@example.com</b>\n    </div>\n\n    <div class=\"linksDiv\">\n      <a href=\"\" (click)=\"signOut($event)\">Sign Out</a>\n      <a href=\"\" (click)=\"showAbout($event)\">About</a>\n      <a href=\"https://github.com/isoos/gwt_mail_sample\">GitHub</a>\n    </div>\n  </div>\n\n  <about-dialog></about-dialog>\n</div>\n",
+        "templateUrl": "asset:gwt_mail_sample/lib/nav/top/top_panel.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:gwt_mail_sample/lib/nav/top/top_panel.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": [
+        {
+          "selectors": [
+            {
+              "value": null,
+              "identifier": {
+                "class": "Type",
+                "name": "AboutDialog",
+                "moduleUrl": "asset:gwt_mail_sample/lib/nav/about/about_dialog.dart",
+                "prefix": null,
+                "isHost": false,
+                "value": null,
+                "diDeps": []
+              },
+              "identifierIsInstance": false
+            }
+          ],
+          "descendants": true,
+          "first": true,
+          "propertyName": "aboutDialog",
+          "read": null
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

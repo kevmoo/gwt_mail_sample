@@ -1,0 +1,16 @@
+body {
+  background: #fff;
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  margin: 0px;
+}
+
+html, body {
+  /* Window.enableScrolling(false); */
+  overflow: hidden;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #000;
+}

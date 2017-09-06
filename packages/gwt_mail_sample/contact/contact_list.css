@@ -1,0 +1,29 @@
+.item {
+  padding: 0.6em 4px;
+  cursor: pointer;
+}
+
+.item:hover {
+  text-decoration: underline;
+}
+
+.popup {
+  background: #fff;
+  padding: 1.5em;
+  width: 14em;
+  height: 2.5em;
+}
+
+.photo {
+  float: left;
+}
+
+.right {
+  white-space: nowrap;
+  margin-left: 56px;
+}
+
+.email {
+  margin-top: 8px;
+  font-style: italic;
+}
