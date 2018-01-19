@@ -1,4 +1,9 @@
-# AngularDart Mail Sample App
+A fork of https://github.com/isoos/gwt_mail_sample – using AngularDart 5 alpha
+libraries.
+
+Hosted at: https://kevmoo.github.io/gwt_mail_sample/
+
+# Original README
 
 Earlier this year (2017) I was asked if there’s a good way to compare
 developing web UIs in Google Web Toolkit (GWT) vs. Dart, specifically
