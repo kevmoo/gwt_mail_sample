@@ -7,10 +7,6 @@ dependencies:
   angular: 5.0.0-alpha+4
   angular_components: 0.9.0-alpha+3
 
-dev_dependencies:
-  browser: ^0.10.0
-  dart_to_js_script_rewriter: ^1.0.1
-
 web:
   compiler:
     debug: dartdevc
@@ -21,7 +17,6 @@ dependency_overrides:
 
 transformers:
 - angular
-- dart_to_js_script_rewriter
 - $dart2js:
     commandLineOptions:
       - --trust-type-annotations

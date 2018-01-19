@@ -64,13 +64,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.15.2+14"
-  browser:
-    dependency: "direct dev"
-    description:
-      name: browser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.10.0+2"
   build:
     dependency: transitive
     description:
@@ -169,13 +162,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.9"
-  dart_to_js_script_rewriter:
-    dependency: "direct dev"
-    description:
-      name: dart_to_js_script_rewriter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
   fixnum:
     dependency: transitive
     description:
