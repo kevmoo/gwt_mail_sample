@@ -40,8 +40,7 @@ class SidePanel implements AfterContentInit, OnDestroy {
 
   @override
   ngAfterContentInit() {
-    _layoutSubscription =
-        domService.trackLayoutChange(_calculateGap, (int gap) {
+    _layoutSubscription = domService.trackLayoutChange(_calculateGap, (gap) {
       heightPx = max(10, heightPx + gap);
     }, runInAngularZone: true);
   }
