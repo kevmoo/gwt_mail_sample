@@ -47,16 +47,19 @@
         class="clear-icon"
         [materialTooltip]="clearIconTooltip"
         [showTooltipIf]="hasClearIconTooltip"
+        [attr.aria-label]="clearIconTooltip"
         (trigger)="onClearIcon()">
     </material-icon>
     <ng-content select="[trailing]"></ng-content>
   </span>
 </material-input>
-<material-popup enforceSpaceConstraints
+<material-popup
     #popup
     trackLayoutChanges
-    class="{{popupShadowCssClass}}"
+    class="selections {{popupShadowCssClass}}"
     [autoDismiss]="autoDismiss"
+    [enforceSpaceConstraints]="enforceSpaceConstraints"
+    [constrainToViewport]="constrainToViewport"
     [matchMinSourceWidth]="popupMatchInputWidth"
     [preferredPositions]="popupPositions"
     [slide]="slide"

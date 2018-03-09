@@ -30,6 +30,9 @@
   height: 32px;
   font-size: 13px;
 }
+:host[compact]:not([icon]) {
+  padding: 0 8px;
+}
 :host[disabled] {
   color: rgba(0, 0, 0, 0.26);
   cursor: not-allowed;
@@ -112,7 +115,7 @@
   right: 0;
   bottom: 0;
   background-color: currentColor;
-  opacity: 0.14;
+  opacity: 0.16;
   pointer-events: none;
 }
 :host.text-wrap {

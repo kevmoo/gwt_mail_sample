@@ -25,6 +25,9 @@
   height: 32px;
   font-size: 13px;
 }
+:host[compact]:not([icon]) {
+  padding: 0 8px;
+}
 :host[disabled] {
   color: rgba(0, 0, 0, 0.26);
   cursor: not-allowed;
@@ -137,6 +140,9 @@
 :host[mini][dense]:not([icon]) {
   height: 32px;
   font-size: 13px;
+}
+:host[mini][compact]:not([icon]) {
+  padding: 0 8px;
 }
 :host[mini][disabled] {
   color: rgba(0, 0, 0, 0.26);
