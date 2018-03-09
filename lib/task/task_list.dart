@@ -4,7 +4,7 @@ import 'package:angular_components/angular_components.dart';
 @Component(
   selector: 'task-list',
   templateUrl: 'task_list.html',
-  directives: const [MaterialCheckboxComponent, COMMON_DIRECTIVES],
+  directives: const [MaterialCheckboxComponent, coreDirectives],
 )
 class TaskList {
   final items = <TaskItem>[

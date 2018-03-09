@@ -28,7 +28,7 @@ class SidePanel implements AfterContentInit, OnDestroy {
   String selectedPanel = 'mailboxes';
 
   @ViewChild('bottom')
-  ElementRef bottomRef;
+  Element bottomRef;
 
   int heightPx = 200;
 
@@ -52,8 +52,7 @@ class SidePanel implements AfterContentInit, OnDestroy {
   }
 
   int _calculateGap() {
-    Element element = bottomRef.nativeElement;
-    int bottom = element.offsetTop + element.offsetHeight;
+    int bottom = bottomRef.offsetTop + bottomRef.offsetHeight;
     return window.innerHeight - bottom;
   }
 }

@@ -13,7 +13,7 @@ const String defaultIconGlyph = 'mail_outline';
     MaterialIconComponent,
     MaterialListComponent,
     MaterialListItemComponent,
-    COMMON_DIRECTIVES
+    coreDirectives
   ],
 )
 class MailFolder {

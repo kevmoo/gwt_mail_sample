@@ -22,7 +22,7 @@ class MailDetail implements AfterContentInit, OnDestroy {
   String get body => mailService.selectedItem?.body;
 
   @ViewChild('bottom')
-  ElementRef bottomRef;
+  Element bottomRef;
 
   int heightPx = 200;
 
@@ -42,8 +42,7 @@ class MailDetail implements AfterContentInit, OnDestroy {
   }
 
   int _calculateGap() {
-    Element element = bottomRef.nativeElement;
-    int bottom = element.offsetTop + element.offsetHeight;
+    int bottom = bottomRef.offsetTop + bottomRef.offsetHeight;
     return window.innerHeight - bottom;
   }
 }

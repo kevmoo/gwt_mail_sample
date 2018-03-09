@@ -8,7 +8,7 @@ import 'package:gwt_mail_sample/mail/list/mail_nav_bar.dart';
   selector: 'mail-list',
   styleUrls: const ['mail_list.css'],
   templateUrl: 'mail_list.html',
-  directives: const [MailNavBar, MaterialRippleComponent, COMMON_DIRECTIVES],
+  directives: const [MailNavBar, MaterialRippleComponent, coreDirectives],
 )
 class MailList {
   final MailService mailService;

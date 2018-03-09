@@ -7,7 +7,7 @@ import 'package:gwt_mail_sample/mail/mail_service.dart';
 import 'package:gwt_mail_sample/mail/mock_mail_service.dart';
 
 main() {
-  bootstrapFactory(ng.AppComponentNgFactory, (parent) {
+  bootstrapFactory(ng.AppComponentNgFactory, ([parent]) {
     return new Injector.map({MailService: new MockMailService()}, parent);
   });
 }

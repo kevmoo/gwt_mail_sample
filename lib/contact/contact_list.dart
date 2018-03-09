@@ -10,7 +10,7 @@ const String defaultPhotoUrl =
   selector: 'contact-list',
   styleUrls: const ['contact_list.css'],
   templateUrl: 'contact_list.html',
-  directives: const [MaterialPopupComponent, COMMON_DIRECTIVES],
+  directives: const [MaterialPopupComponent, coreDirectives],
 )
 class ContactList {
   List<ContactItem> items = [

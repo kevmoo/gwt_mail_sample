@@ -9,7 +9,7 @@ import 'package:angular_components/angular_components.dart';
     MaterialButtonComponent,
     MaterialDialogComponent,
     ModalComponent,
-    COMMON_DIRECTIVES
+    coreDirectives
   ],
 )
 class AboutDialog {
