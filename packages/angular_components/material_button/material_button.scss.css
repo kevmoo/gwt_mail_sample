@@ -87,6 +87,10 @@
 :host[raised][disabled].acx-theme-dark {
   background: rgba(255, 255, 255, 0.12);
 }
+:host[raised].highlighted:not([disabled]) {
+  background-color: #4285f4;
+  color: #fff;
+}
 :host[no-ink] material-ripple {
   display: none;
 }
