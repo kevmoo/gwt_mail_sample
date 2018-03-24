@@ -7,7 +7,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.31.2-alpha.0"
+    version: "0.31.2-alpha.1"
   angular:
     dependency: "direct main"
     description:
@@ -70,7 +70,7 @@ packages:
       name: barback
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.2+14"
+    version: "0.15.2+15"
   bazel_worker:
     dependency: transitive
     description:
@@ -126,7 +126,7 @@ packages:
       name: build_web_compilers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.4+1"
+    version: "0.3.4+2"
   built_collection:
     dependency: transitive
     description:
@@ -224,7 +224,7 @@ packages:
       name: front_end
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0-alpha.10"
+    version: "0.1.0-alpha.11"
   glob:
     dependency: transitive
     description:
@@ -273,7 +273,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.2"
+    version: "0.15.4"
   io:
     dependency: transitive
     description:
@@ -308,7 +308,7 @@ packages:
       name: kernel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.0-alpha.10"
+    version: "0.3.0-alpha.11"
   logging:
     dependency: transitive
     description:
@@ -343,7 +343,7 @@ packages:
       name: observable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.22.0"
+    version: "0.22.1"
   package_config:
     dependency: transitive
     description:
@@ -399,7 +399,7 @@ packages:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.28.0"
+    version: "0.28.2"
   quiver_hashcode:
     dependency: transitive
     description:
@@ -527,4 +527,4 @@ packages:
     source: hosted
     version: "2.1.13"
 sdks:
-  dart: ">=2.0.0-dev.37 <=2.0.0-dev.39.0"
+  dart: ">=2.0.0-dev.37 <=2.0.0-dev.42.0"
